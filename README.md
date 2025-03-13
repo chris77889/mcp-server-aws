@@ -4,6 +4,10 @@
 
 A [Model Context Protocol](https://www.anthropic.com/news/model-context-protocol) server implementation for AWS operations that currently supports S3 and DynamoDB services. All operations are automatically logged and can be accessed through the `audit://aws-operations` resource endpoint.
 
+<a href="https://glama.ai/mcp/servers/v69k6ch2gh">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/v69k6ch2gh/badge" alt="AWS Server MCP server" />
+</a>
+
 See a demo video [here](https://www.loom.com/share/99551eeb2e514e7eaf29168c47f297d1?sid=4eb54324-5546-4f44-99a0-947f80b9365c).
 
 Listed as a [Community Server](https://github.com/modelcontextprotocol/servers?tab=readme-ov-file#-community-servers) within the MCP servers repository.
@@ -54,7 +58,6 @@ npx -y @smithery/cli install mcp-server-aws --client claude
 - **s3_object_delete**: Delete an object from S3
 - **s3_object_list**: List objects in an S3 bucket
 - **s3_object_read**: Read an object's content from S3
-
 
 ### DynamoDB Operations
 
