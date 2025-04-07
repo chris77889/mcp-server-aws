@@ -55,9 +55,13 @@ class AWSManager:
                     region_name=region_name
                 )
             else:
-                logger.debug("Using default AWS credential chain")
-                session = boto3.Session(region_name=region_name)
-
+                aws_profile = os.getenv("AWS_PROFILE")
+                if aws_profile:
+                    logger.debug(f"Using AWS profile: {aws_profile}")
+                    session = boto3.Session(profile_name=aws_profile, region_name=region_name)
+                else:
+                    logger.debug("Using default AWS credential chain")
+                    session = boto3.Session(region_name=region_name)
             return session.client(service_name)
         except Exception as e:
             logger.error(f"Failed to create boto3 client for {
